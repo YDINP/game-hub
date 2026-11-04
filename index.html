@@ -116,6 +116,11 @@
   .card.off .ribbon { position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) rotate(-8deg);
           padding: 6px 16px; border: 2px solid var(--muted); border-radius: 8px; color: var(--ink);
           font-family: "Do Hyeon", sans-serif; font-size: 1.15rem; background: rgba(13,11,20,.6); white-space: nowrap; }
+  .card.soon { cursor: default; }
+  .card.soon .thumb img { filter: saturate(.85) brightness(.8); }
+  .card.soon .body { opacity: .85; }
+  .card.soon .badge { color: var(--c); }
+  .card.soon .ribbon { border-color: var(--c); top: auto; bottom: 24%; transform: translateX(-50%) rotate(-6deg); }
 
   footer { margin: 56px 0 0; padding: 24px 0 40px; border-top: 1px solid var(--line); color: var(--faint); font-size: .8rem;
            display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
@@ -282,6 +287,14 @@
             <div class="meta"><span class="badge">플레이 가능</span><span class="url">imoogi.vercel.app</span></div>
           </div>
         </a>
+        <div class="card off soon" style="--c:#7fbf7a" aria-disabled="true">
+          <div class="thumb"><span class="tag">모험 키우기</span><img src="img/cat-guild.jpg" alt="고양이 모험단 캐릭터 시안" loading="lazy" width="645" height="807"><span class="ribbon">준비 중</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🐱</span><h3>고양이 모험단</h3></div>
+            <p>숲가 작은 길드에서 고양이 아이들의 털무늬와 직업을 정해 키우고, 원정을 보내 모험담을 받아 오는 방치형 모험 키우기</p>
+            <div class="meta"><span class="badge">준비 중</span><span class="url">개발 중</span></div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
