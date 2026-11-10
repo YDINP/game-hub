@@ -116,6 +116,9 @@
   .card.off .ribbon { position: absolute; top: 50%; left: 50%; z-index: 1; transform: translate(-50%, -50%) rotate(-8deg);
           padding: 6px 16px; border: 2px solid var(--muted); border-radius: 8px; color: var(--ink);
           font-family: "Do Hyeon", sans-serif; font-size: 1.15rem; background: rgba(13,11,20,.6); white-space: nowrap; }
+  .new-pill { position: absolute; top: 10px; right: 10px; z-index: 1; padding: 3px 9px; border-radius: 999px;
+          font: 700 .72rem/1.4 "Noto Sans KR", sans-serif; letter-spacing: .04em; color: #1a1020; background: var(--c); }
+  a.card:hover .new-pill, a.card:focus-visible .new-pill { opacity: 0; }
   .card.soon { cursor: default; }
   .card.soon .thumb img { filter: saturate(.85) brightness(.8); }
   .card.soon .body { opacity: .85; }
@@ -135,6 +138,7 @@
     .emoji { width: 30px; height: 30px; font-size: 1rem; }
     .url { display: none; }
     .play { display: none; }
+    .new-pill { top: 40px; left: 10px; right: auto; }
     .tag { top: 8px; left: 8px; font-size: .68rem; padding: 2px 8px; }
     .reel img { width: 90px; }
   }
@@ -148,10 +152,10 @@
   <header class="hero">
     <span class="eyebrow"><span class="dot"></span>지금 만들고 있는 게임들</span>
     <h1>게임 프로젝트 허브</h1>
-    <p>인생 시뮬부터 카이로소프트풍 타이쿤, 키우기, 수집, 퍼즐, 액션까지. 카드를 누르면 바로 플레이할 수 있어요.</p>
+    <p>인생 시뮬부터 카이로소프트풍 타이쿤, 키우기, 수집, 퍼즐, 액션, 캐주얼까지. 카드를 누르면 바로 플레이할 수 있어요.</p>
     <div class="stats">
       <div class="stat"><b id="n-live">9</b><span>플레이 가능</span></div>
-      <div class="stat"><b>6</b><span>장르</span></div>
+      <div class="stat"><b>7</b><span>장르</span></div>
       <div class="stat"><b>📱</b><span>모바일 지원</span></div>
     </div>
   </header>
@@ -161,16 +165,48 @@
   <nav class="filters" aria-label="장르 필터">
     <div class="chips" id="chips">
       <button class="chip" data-f="all" aria-pressed="true">전체</button>
+      <button class="chip" data-f="new" aria-pressed="false">🆕 최신 등록</button>
       <button class="chip" data-f="life" aria-pressed="false">🧙 인생 시뮬</button>
       <button class="chip" data-f="tycoon" aria-pressed="false">🏪 타이쿤</button>
       <button class="chip" data-f="grow" aria-pressed="false">🐉 키우기</button>
       <button class="chip" data-f="collect" aria-pressed="false">🪨 수집</button>
       <button class="chip" data-f="puzzle" aria-pressed="false">🧩 퍼즐</button>
       <button class="chip" data-f="action" aria-pressed="false">⚔️ 액션</button>
+      <button class="chip" data-f="casual" aria-pressed="false">🎲 캐주얼</button>
     </div>
   </nav>
 
   <main>
+    <section data-cat="new">
+      <div class="sec-head"><h2>최신 등록</h2><span>새로 올라온 게임</span></div>
+      <div class="grid">
+        <a class="card" style="--c:#e8573a" href="https://one-more-draw.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">뽑기 로그라이크</span><span class="new-pill">NEW</span><img src="img/one-more-draw.jpg" alt="한 번만 더 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🎒</span><h3>한 번만 더</h3></div>
+            <p>주머니에서 토큰을 하나씩 뽑아 공격을 쌓는 캐주얼 로그라이크. 꽝이 모이면 판이 깨진다 — 멈출까, 한 번만 더?</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">one-more-draw.vercel.app</span></div>
+          </div>
+        </a>
+        <a class="card" style="--c:#e9c46a" href="https://dinner-banpick.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">밴픽 대결</span><span class="new-pill">NEW</span><img src="img/dinner-banpick.jpg" alt="저녁 밴픽 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🍜</span><h3>저녁 밴픽</h3></div>
+            <p>저녁 메뉴를 5:5로 밴픽하고 한 판 붙어서, 이긴 팀 MVP를 먹는 메뉴 고르기 대결</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">dinner-banpick.vercel.app</span></div>
+          </div>
+        </a>
+        <a class="card" style="--c:#3b6fd8" href="https://pen-to-house.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">물물교환</span><span class="new-pill">NEW</span><img src="img/pen-to-house.jpg" alt="볼펜 한 자루로 집 사기 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🖊️</span><h3>볼펜 한 자루로 집 사기</h3></div>
+            <p>작은 물건 하나로 시작해 동네 중고거래로 바꾸고 또 바꿔서, 원룸 보증금 500만 원까지</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">pen-to-house.vercel.app</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
+
     <section data-cat="life">
       <div class="sec-head"><h2>인생 시뮬</h2><span>다른 세계의 한 생</span></div>
       <div class="grid">
@@ -268,6 +304,14 @@
             <div class="meta"><span class="badge">플레이 가능</span><span class="url">keyboard-workshop.vercel.app</span></div>
           </div>
         </a>
+        <a class="card" style="--c:#3b6fd8" href="https://pen-to-house.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">물물교환</span><img src="img/pen-to-house.jpg" alt="볼펜 한 자루로 집 사기 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🖊️</span><h3>볼펜 한 자루로 집 사기</h3></div>
+            <p>작은 물건 하나로 시작해 동네 중고거래로 바꾸고 또 바꿔서, 원룸 보증금 500만 원까지</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">pen-to-house.vercel.app</span></div>
+          </div>
+        </a>
         <div class="card off" aria-disabled="true">
           <div class="thumb"><span class="tag">공방 경영</span><img src="img/robot-workshop.jpg" alt="골목 로봇 공방 게임 화면" loading="lazy" width="645" height="1140"><span class="ribbon">잔별로 리부트</span></div>
           <div class="body">
@@ -342,6 +386,28 @@
         </a>
       </div>
     </section>
+
+    <section data-cat="casual">
+      <div class="sec-head"><h2>캐주얼</h2><span>가볍게 한 판</span></div>
+      <div class="grid">
+        <a class="card" style="--c:#e8573a" href="https://one-more-draw.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">뽑기 로그라이크</span><img src="img/one-more-draw.jpg" alt="한 번만 더 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🎒</span><h3>한 번만 더</h3></div>
+            <p>주머니에서 토큰을 하나씩 뽑아 공격을 쌓는 캐주얼 로그라이크. 꽝이 모이면 판이 깨진다 — 멈출까, 한 번만 더?</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">one-more-draw.vercel.app</span></div>
+          </div>
+        </a>
+        <a class="card" style="--c:#e9c46a" href="https://dinner-banpick.vercel.app" target="_blank" rel="noopener">
+          <div class="thumb"><span class="tag">밴픽 대결</span><img src="img/dinner-banpick.jpg" alt="저녁 밴픽 게임 화면" loading="lazy" width="645" height="807"><span class="play">▶ 플레이</span></div>
+          <div class="body">
+            <div class="title"><span class="emoji">🍜</span><h3>저녁 밴픽</h3></div>
+            <p>저녁 메뉴를 5:5로 밴픽하고 한 판 붙어서, 이긴 팀 MVP를 먹는 메뉴 고르기 대결</p>
+            <div class="meta"><span class="badge">플레이 가능</span><span class="url">dinner-banpick.vercel.app</span></div>
+          </div>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer>
@@ -352,7 +418,9 @@
 
 <script>
   // 살아 있는 카드 수와 썸네일 띠는 카드 목록에서 채운다
-  const live = [...document.querySelectorAll('a.card')];
+  // 최신 등록 칸은 다른 칸의 카드를 한 번 더 보여 주므로 주소로 중복을 뺀다
+  const uniq = els => [...new Map(els.map(a => [a.getAttribute('href'), a])).values()];
+  const live = uniq([...document.querySelectorAll('a.card')]);
   document.getElementById('n-live').textContent = live.length;
   const reel = document.getElementById('reel');
   const imgs = live.map(a => a.querySelector('.thumb img').getAttribute('src'));
